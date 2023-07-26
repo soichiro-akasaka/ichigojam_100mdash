@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+    <link href="./css/main.css" rel="stylesheet" />
+    <title>100m dash</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app" class="container">
+        <h1>{{ title }}</h1>
+        <div class="ranking_board">
+            <dl>
+                <dt class="graph">r</dt>
+                <dt>ランキング</dt>
+                <dt>ナマエ</dt>
+                <dt>タイム</dt>
+            </dl>
+            <dl v-for="(item, index) in data">
+                <dd class="graph">r</dd>
+                <dd>{{ index + 1 }}</dd>
+                <dd>{{ item[0] }}</dd>
+                <dd>{{ item[1] }}</dd>
+            </dl>
+        </div>
+        <div class="write-record">
+            <input type="text" v-model="name" placeholder="ナマエ" />
+            <input type="number" v-model="time" placeholder="タイム" />
+            <button @click="setRankData">トウロク</button>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>

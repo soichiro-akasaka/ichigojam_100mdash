@@ -1,0 +1,99 @@
+/* Webフォントを定義 */
+@font-face {
+  font-family: 'IchigoJam';
+  src: url('../font/IchigoJam-1.4.woff') format('woff');
+}
+@font-face {
+  font-family: 'IchigoJam-GRAPH';
+  src: url('../font/IchigoJam-GRAPH.woff') format('woff');
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: IchigoJam;
+  font-weight: Regular;
+  font-size: 14px;
+  background: rgba(246,246,246,1);
+  color: rgba(0,0,0,1);
+}
+.graph {
+  font-family: IchigoJam-GRAPH;
+}
+.container {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 2rem 0;
+  position: relative;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 1.4em;
+  margin-bottom: 1rem;
+}
+.ranking_board {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 2em 2em 1em;
+  margin-bottom: 1rem;
+  height: calc(100vh - 13rem);
+  font-size: 1.5em;
+  overflow-y: scroll;
+}
+.ranking_board::-webkit-scrollbar{
+  display: none;
+}
+.ranking_board dl {
+  display: flex;
+  margin-bottom: 1em;
+}
+.ranking_board dl dt { font-weight: normal;}
+.ranking_board dl dt:nth-child(1),
+.ranking_board dl dd:nth-child(1) {
+  width: 5%;
+  text-align: left;
+}
+.ranking_board dl dt:nth-child(2),
+.ranking_board dl dd:nth-child(2) {
+  width: 20%;
+  text-align: center;
+}
+.ranking_board dl dt:nth-child(3),
+.ranking_board dl dd:nth-child(3) {
+  width: 50%;
+  text-align: left;
+}
+.ranking_board dl dt:nth-child(4),
+.ranking_board dl dd:nth-child(4) {
+  width: 25%;
+  text-align: right;
+}
+
+.write-record {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 1rem;
+  position: absolute;
+  bottom: 2rem;
+}
+
+.write-record input {
+  width: 40%;
+  margin-right: 1rem;
+  background: #222;
+  padding: 1em;
+}
+.write-record button {
+  width: 15%;
+  padding: 1em;
+  border: 2px solid #fff;
+  text-align: center;
+  cursor: pointer;
+}
