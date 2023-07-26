@@ -45,6 +45,7 @@ h2 {
   height: calc(100vh - 21rem);
   font-size: 1.5em;
   overflow-y: scroll;
+  overflow-x: visible;
 }
 .ranking_board::-webkit-scrollbar{
   display: none;
@@ -73,6 +74,22 @@ h2 {
 .ranking_board dl dd:nth-child(4) {
   width: 25%;
   text-align: right;
+}
+.ranking_board dl dd span {
+  display: inline-block;
+  content: 'DELETE';
+  border: 1px solid #f66;
+  color: #f66;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.ranking_board dl dd span:hover {
+  opacity: 1;
 }
 
 .recent-record {

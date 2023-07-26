@@ -20,7 +20,7 @@
             <dl v-for="(item, index) in data">
                 <dd class="graph">r</dd>
                 <dd>{{ index + 1 }}</dd>
-                <dd>{{ item[0] }}</dd>
+                <dd>{{ item[0] }}<span @click="deleteRecoad(index)">DELETE</span></dd>
                 <dd>{{ item[1] }}</dd>
             </dl>
         </div>

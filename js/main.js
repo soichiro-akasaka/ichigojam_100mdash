@@ -36,6 +36,11 @@ createApp({
             }
         }
 
+        const deleteRecoad = (index) => {
+            data.value.splice(index, 1);
+            localStorage.setItem('rank_data', JSON.stringify(data.value));
+        }
+
         const setRecentData = (name,time) => {
             recentName.value = name;
             recentTime.value = time;
@@ -59,7 +64,8 @@ createApp({
             time,
             recentName,
             recentTime,
-            setRankData
+            setRankData,
+            deleteRecoad
         }
     }
 }).mount('#app')
