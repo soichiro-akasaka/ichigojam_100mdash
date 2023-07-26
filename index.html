@@ -24,6 +24,16 @@
                 <dd>{{ item[1] }}</dd>
             </dl>
         </div>
+        <h2>ゼンカイノキロク</h2>
+        <div class="recent-record">
+            <dl>
+                <dd class="graph">r</dd>
+                <dt>ナマエ</dt>
+                <dd>{{ recentName }}</dd>
+                <dt>タイム</dt>
+                <dd>{{ recentTime }}</dd>
+            </dl>
+        </div>
         <div class="write-record">
             <input type="text" v-model="name" placeholder="ナマエ" />
             <input type="number" v-model="time" placeholder="タイム" />

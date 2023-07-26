@@ -13,6 +13,8 @@ createApp({
 
         const name = ref('');
         const time = ref('');
+        const recentName = ref('');
+        const recentTime = ref('');
 
         const setRankData = () => {
             if (name.value && time.value) {
@@ -28,15 +30,22 @@ createApp({
                 // タイムでソート
                 sortByTime();
                 localStorage.setItem('rank_data', JSON.stringify(data.value));
+                setRecentData(inputName, inputTime);
                 name.value = '';
                 time.value = '';
             }
         }
 
+        const setRecentData = (name,time) => {
+            recentName.value = name;
+            recentTime.value = time;
+        }
+
         const sortByTime = () => {
             data.value.sort(function(a, b) {
-                if (a[1] < b[1]) return -1;
-                if (a[1] > b[1]) return 1;
+                // 数値に変換してソート
+                if (parseFloat(a[1]) < parseFloat(b[1])) { return -1;}
+                if (parseFloat(a[1]) > parseFloat(b[1])) { return 1; }
                 return 0;
             });
         }
@@ -48,6 +57,8 @@ createApp({
             data,
             name,
             time,
+            recentName,
+            recentTime,
             setRankData
         }
     }
